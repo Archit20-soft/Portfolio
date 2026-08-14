@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Archit Tripathi | BCA Student Portfolio</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0f172a;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 16px;
+            position: relative;
+            padding: 6px 2px;
+            transition: 0.3s;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: #38bdf8;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #38bdf8;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           HOME / HERO
+        ========================== */
+
+        .hero {
+            min-height: 92vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a8a,
+                    #0369a1
+                );
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1050px;
+            width: 100%;
+        }
+
+        .hero-main {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+
+        /* =========================
+           PROFILE PHOTO
+        ========================== */
+
+        .profile-area {
+            min-width: 260px;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 210px;
+            height: 210px;
+
+            margin: auto;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            border: 6px solid white;
+
+            box-shadow:
+                0 0 0 6px rgba(56,189,248,0.25),
+                0 15px 40px rgba(0,0,0,0.4);
+
+            transition: 0.4s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.07);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+            object-position: center top;
+        }
+
+
+        /* =========================
+           HERO TEXT
+        ========================== */
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #dbeafe;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+            margin-right: 10px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .primary-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 2px solid #38bdf8;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================== */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #0f172a;
+        }
+
+        .section-title h2 span {
+            color: #0284c7;
+        }
+
+        .section-title p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            background: white;
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .info-row {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row strong {
+            display: inline-block;
+            width: 120px;
+            color: #0284c7;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 7px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .skill-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 7px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-top {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0284c7,
+                    #1e3a8a
+                );
+
+            color: white;
+
+            padding: 35px;
+
+            text-align: center;
+
+            font-size: 45px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .tags span {
+            display: inline-block;
+
+            background: #e0f2fe;
+            color: #0369a1;
+
+            padding: 5px 10px;
+
+            border-radius: 15px;
+
+            font-size: 12px;
+
+            margin: 3px;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-box {
+            max-width: 800px;
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-left: 5px solid #0284c7;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 7px 20px rgba(0,0,0,0.08);
+        }
+
+        .education-box h3 {
+            font-size: 24px;
+        }
+
+        .education-box h4 {
+            color: #0284c7;
+            margin: 5px 0;
+        }
+
+        .education-box p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .certifications-section {
+            background: #eef6ff;
+        }
+
+        .certifications-container {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 25px;
+        }
+
+        .cert-card {
+            background: white;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            border: 1px solid #dbeafe;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.10);
+
+            transition: 0.35s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 16px 35px rgba(2,132,199,0.20);
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 330px;
+
+            object-fit: contain;
+
+            background: #f8fafc;
+
+            display: block;
+
+            cursor: zoom-in;
+
+            transition: 0.3s;
+        }
+
+        .cert-card img:hover {
+            transform: scale(1.02);
+        }
+
+        .cert-info {
+            padding: 20px;
+        }
+
+        .cert-info h3 {
+            color: #0f172a;
+            font-size: 18px;
+        }
+
+        .cert-info p {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-section {
+            background: #e0f2fe;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 7px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin: 10px 0 6px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 13px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0284c7;
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #0284c7;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #0f172a;
+        }
+
+
+        /* =========================
+           CERTIFICATE POPUP
+        ========================== */
+
+        .cert-lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(2,6,23,0.90);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            z-index: 2000;
+        }
+
+        .cert-lightbox.show {
+            display: flex;
+        }
+
+        .cert-lightbox img {
+            max-width: 92vw;
+            max-height: 90vh;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: fixed;
+
+            top: 20px;
+            right: 30px;
+
+            color: white;
+
+            font-size: 40px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #0f172a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #38bdf8;
+
+            margin: 0 10px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .hero-main {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container,
+            .projects-container {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .skills-container,
+            .projects-container,
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-photo {
+                width: 160px;
+                height: 160px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Archit<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home" class="active">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#education">
+                        Education
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#certifications">
+                        Certifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-main">
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="profile-area">
+
+                    <div class="profile-photo">
+
+                        <img
+                            src="profile.jpg"
+                            alt="Archit Tripathi Profile Photo"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HERO TEXT -->
+
+                <div class="hero-text">
+
+                    <h1>
+                        Hello, I'm
+                        <span>Archit Tripathi</span>
+                    </h1>
+
+                    <h2>
+                        BCA Student | Web Developer | Tech Enthusiast
+                    </h2>
+
+                    <p>
+                        Welcome to my personal portfolio.
+                        I am a BCA student interested in web
+                        development, programming and modern
+                        technologies. I enjoy learning new
+                        skills and creating useful digital projects.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn primary-btn"
+                        >
+                            View My Projects
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="btn secondary-btn"
+                        >
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+                About <span>Me</span>
+            </h2>
+
+            <p>
+                Get to know me and my interests
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+
+            <div class="about-text">
+
+                <h3>
+                    Hi, I'm Archit Tripathi 👋
+                </h3>
+
+                <p>
+                    I am a Bachelor of Computer Applications
+                    (BCA) student with a strong interest in
+                    technology and software development.
+                </p>
+
+                <p>
+                    I am currently developing my skills in
+                    HTML, CSS, JavaScript, Java, SQL and
+                    other computer technologies.
+                </p>
+
+                <p>
+                    My goal is to become a skilled IT professional
+                    and build innovative projects.
+                </p>
+
+                <p>
+                    I believe in continuous learning,
+                    practical projects and improving my
+                    technical skills every day.
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <div class="info-row">
+                    <strong>Name:</strong>
+                    Archit Tripathi
+                </div>
+
+                <div class="info-row">
+                    <strong>Course:</strong>
+                    Bachelor of Computer Applications
+                </div>
+
+                <div class="info-row">
+                    <strong>Field:</strong>
+                    Computer Applications
+                </div>
+
+                <div class="info-row">
+                    <strong>Interest:</strong>
+                    Web Development & Technology
+                </div>
+
+                <div class="info-row">
+                    <strong>Goal:</strong>
+                    IT Professional
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Skills</span>
+            </h2>
+
+            <p>
+                Technologies and skills I am learning
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    Creating structured and semantic
+                    web pages.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Designing responsive and attractive
+                    websites.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+                <p>
+                    Adding interactivity and dynamic
+                    functionality.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ☕
+                </div>
+
+                <h3>
+                    Java
+                </h3>
+
+                <p>
+                    Learning object-oriented programming
+                    and application development.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🗄️
+                </div>
+
+                <h3>
+                    SQL
+                </h3>
+
+                <p>
+                    Working with databases and SQL queries.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Building modern and responsive
+                    web projects.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Projects</span>
+            </h2>
+
+            <p>
+                Some projects created while learning
+            </p>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <div class="project-card">
+
+                <div class="project-top">
+                    🏦
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Simple Banking System
+                    </h3>
+
+                    <p>
+                        A simple banking system where users
+                        can deposit money, withdraw money
+                        and check their account balance.
+                    </p>
+
+                    <div class="tags">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-top">
+                    🎓
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        College Event Management
+                    </h3>
+
+                    <p>
+                        A website for managing college events,
+                        schedules and student event registration.
+                    </p>
+
+                    <div class="tags">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-top">
+                    📚
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Library Management System
+                    </h3>
+
+                    <p>
+                        A project designed to manage books,
+                        students and library transactions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>JDBC</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Education</span>
+            </h2>
+
+            <p>
+                Academic background
+            </p>
+
+        </div>
+
+
+        <div class="education-box">
+
+            <h3>
+                Bachelor of Computer Applications (BCA)
+            </h3>
+
+            <h4>
+                Computer Applications
+            </h4>
+
+            <p>
+                Currently pursuing BCA and developing
+                knowledge in programming, databases,
+                web development, computer networks
+                and software technologies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================== -->
+
+    <section
+        id="certifications"
+        class="certifications-section"
+    >
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Certifications</span>
+            </h2>
+
+            <p>
+                Courses, workshops and professional
+                learning certificates
+            </p>
+
+        </div>
+
+
+        <div class="certifications-container">
+
+
+            <!-- Certificate 1 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-1.jpg"
+                    alt="Basic Computer Course Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        Basic Computer Course
+                        – STP Computer Education
+                    </h3>
+
+                    <p>
+                        Certificate earned by Archit Tripathi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 2 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-2.jpg"
+                    alt="Essential SQL Skills Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        Essential SQL Skills for
+                        Data Beginners – Analytics Vidhya
+                    </h3>
+
+                    <p>
+                        Certificate earned by Archit Tripathi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 3 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-3.jpg"
+                    alt="Cybersecurity Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        Become a Cybersecurity Professional
+                        in 2026 – WsCube Tech
+                    </h3>
+
+                    <p>
+                        Certificate earned by Archit Tripathi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 4 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-4.jpg"
+                    alt="National Cyber Security Workshop"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        National Cyber Security
+                        Awareness Workshop
+                    </h3>
+
+                    <p>
+                        India Space Week
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 5 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-5.jpg"
+                    alt="Communicating With Impact Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        Communicating With Impact
+                    </h3>
+
+                    <p>
+                        IBM SkillsBuild
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 6 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-6.jpg"
+                    alt="Project Management Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        Critical Soft Skills for
+                        Project Managers
+                    </h3>
+
+                    <p>
+                        IBM SkillsBuild
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 7 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-7.jpg"
+                    alt="Resume Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        How to Make a Resume
+                        (With Examples)
+                    </h3>
+
+                    <p>
+                        Indeed Career Guide
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 8 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-8.jpg"
+                    alt="Resume Writing Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        How to Write a Resume
+                    </h3>
+
+                    <p>
+                        Glassdoor
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Certificate 9 -->
+
+            <div class="cert-card">
+
+                <img
+                    src="certificate-9.jpg"
+                    alt="Resume Stand Out Certificate"
+                    onclick="openCertificate(this.src)"
+                >
+
+                <div class="cert-info">
+
+                    <h3>
+                        Make Your Resume Stand Out
+                        from the Pile
+                    </h3>
+
+                    <p>
+                        IBM Careers Blog
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+        id="contact"
+        class="contact-section"
+    >
+
+        <div class="section-title">
+
+            <h2>
+                Contact <span>Me</span>
+            </h2>
+
+            <p>
+                Feel free to get in touch
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <form
+                class="contact-form"
+                onsubmit="sendMessage(event)"
+            >
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>
+                    Your Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Archit Tripathi.
+            All Rights Reserved.
+        </p>
+
+        <div class="social-links">
+
+            <a href="#" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="#" target="_blank">
+                GitHub
+            </a>
+
+            <a href="#" target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         CERTIFICATE POPUP
+    ========================== -->
+
+    <div
+        class="cert-lightbox"
+        id="certLightbox"
+        onclick="closeCertificate(event)"
+    >
+
+        <span
+            class="lightbox-close"
+            onclick="closeCertificate(event)"
+        >
+            &times;
+        </span>
+
+        <img
+            id="certificatePreview"
+            src=""
+            alt="Certificate Preview"
+        >
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           NAVIGATION ACTIVE EFFECT
+        ========================== */
+
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
+
+        const sections =
+            document.querySelectorAll("section[id]");
+
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                navLinks.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+            });
+
+        });
+
+
+        /* =========================
+           ACTIVE SECTION ON SCROLL
+        ========================== */
+
+        window.addEventListener("scroll", function () {
+
+            let current = "home";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 150;
+
+                if (
+                    window.scrollY >= sectionTop
+                ) {
+                    current = section.id;
+                }
+
+            });
+
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href")
+                    === "#" + current
+                ) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
+
+
+
+        /* =========================
+           CERTIFICATE POPUP
+        ========================== */
+
+        function openCertificate(imageSource) {
+
+            const lightbox =
+                document.getElementById(
+                    "certLightbox"
+                );
+
+            const preview =
+                document.getElementById(
+                    "certificatePreview"
+                );
+
+            preview.src = imageSource;
+
+            lightbox.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+
+        function closeCertificate(event) {
+
+            if (
+                event &&
+                event.target.id ===
+                "certificatePreview"
+            ) {
+                return;
+            }
+
+            const lightbox =
+                document.getElementById(
+                    "certLightbox"
+                );
+
+            lightbox.classList.remove("show");
+
+            document.body.style.overflow = "";
+        }
+
+
+
+        /* =========================
+           ESC KEY FOR POPUP
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    const lightbox =
+                        document.getElementById(
+                            "certLightbox"
+                        );
+
+                    lightbox.classList.remove("show");
+
+                    document.body.style.overflow = "";
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value;
+
+            alert(
+                "Thank you " +
+                name +
+                "! Your message has been submitted."
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
